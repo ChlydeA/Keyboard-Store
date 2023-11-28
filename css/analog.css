@@ -1,10 +1,18 @@
+*{
+	box-sizing: border-box;
+}
 html, body {
 	font-size: 80%;
 	font-family: "Courier New", Courier, monospace;
 	letter-spacing: 0.15em;	
 	background-color: #efefef;
 }
-			
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}		
 #page {
 	padding: 20px;
 	background-color: #ffffff;
@@ -15,9 +23,6 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-}
-img{
-	border-radius: 10px;
 }
 .search{
 	display: flex;
@@ -59,6 +64,7 @@ li {
 	flex-wrap: wrap;
 }
 .main-img img{
+	border-radius: 5px;
 	margin: 10px auto;
 	max-width: 100%;
 	height: 300px;
@@ -68,7 +74,16 @@ p {
 	width: 600px; 
 	margin: 0px auto 20px auto; 
 	font-weight: normal;
+}
+.card{
+	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
 }	
+
+.card-text{
+	text-align: center;
+}
 a {
 	color: #000000;
 	text-transform: uppercase;
@@ -77,22 +92,33 @@ a {
 }
 a:hover, a.on {
 	color: #cc3333;
-	background-color: #ffffff;
+	background-color: #fff;
 }
 .sub-img{
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-}
-#sub-img{
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	flex-wrap: wrap;
 }
-#sub-img img{
-	max-width: 500px;
+.sub-img:last-child{
+	margin-top: 10px;
+	border-bottom: none;
+	border-bottom: 1px solid #030;
 }
+.sub-img img{
+	max-width: 500px;
+	padding: 20px;
+}
+
 
 /*-----RESPONSIVE-----*/
 
+@media(max-width: 960px){
+	.sub-img{
+		border-bottom: none;
+		border-right: 1px solid #030;
+	}
+	.sub-img:last-child{
+		
+	}
+}
